@@ -1,6 +1,7 @@
 import React from "react";
 import {useQuery, gql} from '@apollo/client';
 import Layout from "../components/layout";
+import { Card, CardContent, Typography } from '@mui/material';
 
 const GET_BANDS = gql`
   query GetBands {
@@ -22,14 +23,16 @@ const AboutPage = () => {
     return (
         <Layout>
             <div style={{ margin: '3rem auto', maxWidth: 600 }}>
-                <h2>My Bands</h2>
+                <Typography variant="h4" gutterBottom>My Bands</Typography>
                 {data.bands.map((band) => (
-                    <div key={band.id}>
-                    <h3>{band.name}</h3>
-                    <p>Year: {band.year}</p>
-                    <p>Genre: {band.genre}</p>
-                    <p>Description: {band.description}</p>
-                    </div>
+                    <Card key={band.id} style={{ marginBottom: '1rem' }}>
+                        <CardContent>
+                            <Typography variant="h5" gutterBottom>{band.name}</Typography>
+                            <Typography variant="body1">Year: {band.year}</Typography>
+                            <Typography variant="body1">Genre: {band.genre}</Typography>
+                            <Typography variant="body1">Description: {band.description}</Typography>
+                        </CardContent>
+                    </Card>
                 ))}
             </div>
         </Layout>
