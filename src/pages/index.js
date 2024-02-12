@@ -1,20 +1,13 @@
+import React from "react"
+import Layout from "../components/layout"
 
-import React from 'react'
-import { Link } from 'gatsby'
+const HomePage = () => (
+  <Layout>
+    <div style={{ margin: '3rem auto', maxWidth: 600 }}>
+      <h1 style={{ textAlign: 'center', color: 'purple' }}>Welcome to My Website!</h1>
+      <p style={{ textAlign: 'center' }}>This is a sample site for Gatsby and Apollo.</p>
+    </div>
+  </Layout>
+)
 
-// Step 2: Define your component
-const IndexPage = () => {
-  return (
-    <main>
-      <h1>Welcome to my Gatsby site!</h1>
-      <Link to="/about">About</Link>
-      <p>I'm making this by following the Gatsby Tutorial.</p>
-    </main>
-  )
-}
-
-// You'll learn about this in the next task, just copy it for now
-export const Head = () => <title>Home Page</title>
-
-// Step 3: Export your component
-export default IndexPage
+export default HomePage

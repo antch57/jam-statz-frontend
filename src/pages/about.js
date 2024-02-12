@@ -1,7 +1,6 @@
 import React from "react";
-import { Link } from "gatsby";
-
 import {useQuery, gql} from '@apollo/client';
+import Layout from "../components/layout";
 
 const GET_BANDS = gql`
   query GetBands {
@@ -21,21 +20,19 @@ const AboutPage = () => {
     if (error) return `Error! ${error.message}`;
 
     return (
-        <main>
-          <h1>About Me</h1>
-          <Link to="/">Home</Link>
-          <p>I'm good enough, I'm smart enough, and gosh darn it, people like me!</p>
-
-          <h2>My Bands</h2>
-          {data.bands.map((band) => (
-            <div key={band.id}>
-              <h3>{band.name}</h3>
-              <p>Year: {band.year}</p>
-              <p>Genre: {band.genre}</p>
-              <p>Description: {band.description}</p>
+        <Layout>
+            <div style={{ margin: '3rem auto', maxWidth: 600 }}>
+                <h2>My Bands</h2>
+                {data.bands.map((band) => (
+                    <div key={band.id}>
+                    <h3>{band.name}</h3>
+                    <p>Year: {band.year}</p>
+                    <p>Genre: {band.genre}</p>
+                    <p>Description: {band.description}</p>
+                    </div>
+                ))}
             </div>
-          ))}
-        </main>
+        </Layout>
       );
     }
 
