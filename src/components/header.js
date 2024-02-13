@@ -1,19 +1,54 @@
-import React from "react";
-import { AppBar, Toolbar, Typography, Button, Link } from "@mui/material";
-import HomeIcon from '@mui/icons-material/Home';
+import React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+import SpaIcon from '@mui/icons-material/Spa';
+import { Link } from "gatsby"
 
-const Header = () => (
-<AppBar position="static" sx={{ bgcolor: 'black' }}>
-    <Toolbar>
-    <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'white' }}>
-        <Link href="/" color="inherit" underline="none" sx={{ '&:hover': { color: 'white' }, '&:active': { color: 'grey' } }}>
-        <HomeIcon /> Home
+const pages = ['Bands', 'Albums', 'Performances', 'Venues'];
+
+const TopToolBar = () => (
+<AppBar position="static" sx={{bgcolor: 'black'}}>
+  <Container maxWidth="xl">
+    <Toolbar disableGutters>
+      <Link
+        to="/"
+        style={{ textDecoration: 'none', color: 'inherit' }}
+      >
+        <Box display="flex" alignItems="center">
+          <SpaIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <Typography
+          variant="h6"
+          noWrap
+          sx={{
+            mr: 2,
+            display: { xs: 'none', md: 'flex' },
+            fontFamily: 'monospace',
+            fontWeight: 700,
+            letterSpacing: '.3rem',
+            color: 'inherit',
+            textDecoration: 'none',
+          }}
+        >
+          JAMZ
+          </Typography>
+        </Box>
+      </Link>
+
+      {pages.map((page) => (
+        <Link to={`/${page.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit' }} key={page}>
+          <Button color="inherit" key={page}>
+            {page}
+          </Button>
         </Link>
-    </Typography>
-    <Button color="inherit" href="/about" sx={{ color: 'white', '&:hover': { color: 'white' }, '&:active': { color: 'grey' } }}>About</Button>
-    <Button color="inherit" href="/contact" sx={{ color: 'white', '&:hover': { color: 'white' }, '&:active': { color: 'grey' } }}>Contact</Button>
+      ))}
+
     </Toolbar>
+  </Container>
 </AppBar>
 );
 
-export default Header;
+export default TopToolBar;

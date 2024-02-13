@@ -1,13 +1,13 @@
 import React from 'react';
 import { Box, Container, CssBaseline } from '@mui/material';
 import Footer from './footer';
-import ResponsiveAppBar from "./topMenuBar";
+import Header from "./header";
 
 const Layout = ({ children }) => (
     <Box style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', margin: 0, padding: 0 }}>
-        <CssBaseline /> {/* This line resets the padding and margins */}
-        <ResponsiveAppBar />
-        <Container style={{ flex: 1, padding: 0, margin: 0 }}>
+        <CssBaseline />
+        <Header />
+        <Container sx={{ flex: 1, p: 0, m: 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             {children}
         </Container>
         <Footer />
