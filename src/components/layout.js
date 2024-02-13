@@ -1,20 +1,17 @@
-import React from "react"
-import { Link } from "gatsby"
-import "./layout.css"
+import React from 'react';
+import { Box, Container } from '@mui/material';
+import Footer from './footer';
+import ResponsiveAppBar from "./topMenuBar";
+import Header from './header';
 
+const Layout = ({ children }) => (
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <ResponsiveAppBar />
+        <Container style={{ flex: 1 }}>
+            {children}
+        </Container>
+        <Footer />
+    </div>
+);
 
-const Layout = ({ children }) => {
-    return (
-      <div className="layout">
-        <header className="header">im the header!</header>
-        <main>{children}</main>
-        <footer className="footer">
-            <Link to="/" className="link-style">Home</Link>
-            <Link to="/about" className="link-style">About</Link>
-            <Link to="/contact" className="link-style">Contact</Link>
-        </footer>
-      </div>
-    )
-  }
-
-export default Layout
+export default Layout;
