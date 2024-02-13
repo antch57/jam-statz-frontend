@@ -1,16 +1,30 @@
 import React from "react"
-import Layout from '../components/layout';
-import { Box, Typography, Container } from '@mui/material';
+import { Typography, Container, Divider } from '@mui/material';
 
-const HomePage = () => (
-  <Layout>
-    <Container>
-      <Box sx={{ margin: '3rem auto', maxWidth: 600, textAlign: 'center' }}>
-        <Typography variant="h1" color="purple">Welcome to My Website!</Typography>
-        <Typography>im trying so gaawwlll.</Typography>
-      </Box>
-    </Container>
-  </Layout>
-)
+import Layout from "../components/layout";
+import FeaturedBands from "../components/featuredBands";
+import AboutJamz from "../components/aboutJamz";
+import FeaturedShows from "../components/featuredShows";
 
-export default HomePage
+const LandingPage = () => {
+  return (
+    <Layout>
+      <Container maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
+        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+          Welcome to Jamz
+        </Typography>
+        <Typography variant="h5" align="center" color="textSecondary" component="p">
+          Keep track of your favorite bands, albums, live performances and venues.
+        </Typography>
+      </Container>
+      <Divider variant="middle" />
+      <FeaturedBands/>
+      <Divider variant="middle" />
+      <FeaturedShows/>
+      <Divider variant="middle" />
+      <AboutJamz/>
+    </Layout>
+  )
+}
+
+export default LandingPage

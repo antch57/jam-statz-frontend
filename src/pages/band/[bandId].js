@@ -1,6 +1,6 @@
 import React from 'react';
 import { gql, useQuery } from '@apollo/client';
-import { Box, Container, Card, CardMedia, Grid, Paper, Typography } from '@mui/material';
+import { Box, Container, Card, CardMedia, Typography } from '@mui/material';
 import Layout from '../../components/layout';
 
 const GET_BAND = gql`
@@ -15,7 +15,7 @@ const GET_BAND = gql`
   }
 `;
 
-const LandingPage = ({bandId}) => {
+const BandPage = ({bandId}) => {
   const { loading, error, data } = useQuery(GET_BAND, {
     variables: { id: bandId },
   });
@@ -45,4 +45,4 @@ const LandingPage = ({bandId}) => {
   );
 };
 
-export default LandingPage;
+export default BandPage;
