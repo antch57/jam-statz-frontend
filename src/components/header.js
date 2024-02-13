@@ -19,7 +19,17 @@ const TopToolBar = () => (
         style={{ textDecoration: 'none', color: 'inherit' }}
       >
         <Box display="flex" alignItems="center">
-          <SpaIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <SpaIcon
+            sx={{
+              display: {
+                xs: 'none',
+                md: 'flex'
+              },
+              mr: 1,
+              position: 'relative',
+              top: '-2px',
+              fontSize: '2rem',
+            }} />
           <Typography
           variant="h6"
           noWrap
