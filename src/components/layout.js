@@ -7,7 +7,7 @@ const Layout = ({ children }) => (
     <Box style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', margin: 0, padding: 0 }}>
         <CssBaseline />
         <Header />
-        <Container sx={{ flex: 1, p: 0, m: 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <Container>
             {children}
         </Container>
         <Footer />
