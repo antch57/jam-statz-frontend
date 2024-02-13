@@ -2,6 +2,7 @@ import React from 'react';
 import { gql, useQuery } from '@apollo/client';
 import { Box, Container, Card, CardMedia, Typography } from '@mui/material';
 import Layout from '../../components/layout';
+
 const GET_SHOW = gql`
   query GetShow($id: ID!) {
     performance(id: $id) {

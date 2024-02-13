@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import SpaIcon from '@mui/icons-material/Spa';
 import { Link } from "gatsby"
 
-const pages = ['Bands', 'Albums', 'Performances', 'Venues'];
+const pages = ['Bands', 'Albums', 'Performances', 'Venues', 'Contribute'];
 
 const TopToolBar = () => (
 <AppBar position="static" sx={{bgcolor: 'black'}}>
