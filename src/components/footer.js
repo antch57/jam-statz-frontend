@@ -35,7 +35,6 @@ const Footer = () => (
             </Link>
           </Typography>
         </Grid>
-
         <Grid item>
           <Divider orientation="vertical" flexItem />
         </Grid>
