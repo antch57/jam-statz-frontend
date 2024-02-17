@@ -1,13 +1,20 @@
 import React from "react"
 import Layout from '../components/layout';
-import { Box, Typography, Container } from '@mui/material';
+import { Box, Button, Typography, Container } from '@mui/material';
 
 const HomePage = () => (
   <Layout>
-    <Container>
-      <Box sx={{ margin: '3rem auto', maxWidth: 600, textAlign: 'center' }}>
-        <Typography variant="h1" color="purple">Welcome to My Website!</Typography>
-        <Typography>im trying so gaawwlll.</Typography>
+    <Container maxWidth="sm">
+      <Typography variant="h2" align="center" gutterBottom>
+        Welcome to My App
+      </Typography>
+      <Typography variant="h5"align="center"  gutterBottom>
+        This is a simple landing page.
+      </Typography>
+      <Box display="flex" justifyContent="center">
+        <Button variant="contained" color="primary" size="large">
+          Get Started
+        </Button>
       </Box>
     </Container>
   </Layout>
